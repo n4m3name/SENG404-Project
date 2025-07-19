@@ -7,3 +7,7 @@ Cofiguration: Agent mode, Claude Sonnet 4
 ### Pilot analysis:
 - "I need you to - WITHOUT EDITING ANY FILE EXCEPT pilot.qmd - write appropriate pilot experiments using cobined_repository_data.json. Appropriateness should be defined by what you read in outline.qmd, proposal.qmd. data_sourcing.qmd contains what has already been done. Remember that the ONLY file you are allowed to edit is pilot.qmd!!!"
 - "add a block at the beginning which installs rquired packages if not already existing in env"
+
+### Readme:
+- "Populate the project readme.md using the contents of the proposal for reference"
+- "It's almost exactly what's contained in the proposal - I don't need that, I need a project readme - the thing that gives info about the project on github"
