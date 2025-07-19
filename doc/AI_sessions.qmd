@@ -1,0 +1,7 @@
+# AI Sessions
+
+This file stores links to AI sessions that guided the development of the project.
+
+## Deliverables
+
+### [Proposal]()
