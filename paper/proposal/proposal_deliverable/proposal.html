@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>proposal</title>
+<title>SENG-404 Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +35,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="proposal_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="proposal_files/libs/bootstrap/bootstrap-41d128fa7d2fc35e15c5440c3becc28b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -44,11 +73,25 @@ ul.task-list li input[type="checkbox"] {
 
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SENG-404 Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</h1>
+</div>
 
 
 
-<section id="seng-404-project-proposal-prompt-engineering-and-project-engagement-in-llm-enabled-repositories" class="level1">
-<h1>SENG-404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <p>Evan Strasdin - V00907185<br>
 <a href="https://github.com/n4m3name/SENG404-Project">Git Link</a></p>
 <section id="motivation" class="level2">
@@ -57,11 +100,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Recent research has begun to formalize this space. Studies have introduced taxonomies of prompt types, such as zero-shot, few-shot, and chain-of-thought prompting <a href="#references">(Zhou et al., 2024)</a>, and proposed metrics for evaluating prompt quality, including reasoning coherence <a href="#references">(Li et al., 2023)</a> and cost-efficiency <a href="#references">(Diao et al., 2024)</a>. Other work has analyzed how prompts evolve over time in open-source repositories <a href="#references">(Tafreshipour et al., 2024)</a>.</p>
 <p>However, it remains unclear whether prompt characteristics, both in terms of type and engineering behaviors (such as complexity, reuse, or collaborative authorship), are associated with broader indicators of project activity and engagement, such as contributor count, issue resolution rate, or project growth.</p>
 <p>This study addresses that gap by combining prompt classification with software repository mining. We will apply established prompt type categories and measure engineering-related characteristics such as length, example count, and contributor overlap. Where appropriate, we may explore additional quality metrics inspired by recent research. Our goal is to uncover whether observable prompt patterns relate to collaboration and development dynamics in real-world LLM-integrated projects.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
 <p>Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?</p>
 <p>We will analyze prompt artifacts extracted from public repositories and apply a combination of classification (for example, by prompt type) and metric-based evaluation (such as prompt length and contributor interaction). These features will be compared against repository-level signals of activity, including contributor count, issue resolution rate, and project growth over time.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
 </section>
 <section id="expected-data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="expected-data-sources">Expected Data Sources</h2>
@@ -103,18 +152,256 @@ ul.task-list li input[type="checkbox"] {
 <section id="optional-software-heritage-graph" class="level3">
 <h3 class="anchored" data-anchor-id="optional-software-heritage-graph">Optional: Software Heritage Graph</h3>
 <p>If time and tooling permit, the Software Heritage Graph will be used to trace prompt files across forks and versions, allowing us to observe reuse and evolution beyond a single repository.</p>
-<hr>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
 </section>
 </section>
-<section id="disclaimer-use-of-ai" class="level2">
-<h2 class="anchored" data-anchor-id="disclaimer-use-of-ai">Disclaimer: Use of AI</h2>
-<p>I am a full-blown AI enthusiast and believe it is as or more important for humanity than the printing press. I use it for absolutely everything, thus in order to conform to the the <a href="https://llm-guidelines.org/guidelines/">suggested guidelines</a>, I will link directly to the conversation(s) pertaining to the assignment.</p>
-<section id="formal-disclaimer" class="level3">
-<h3 class="anchored" data-anchor-id="formal-disclaimer">Formal Disclaimer</h3>
-<p>Portions of this proposal (initial topic brainstorming, paper identification, text drafts, this paragraph) were generated with the assistance of OpenAI’s ChatGPT-4o. All content was critically reviewed, edited, and verified by the author. The model was used to enhance productivity and clarity but not to replace original analysis or decision-making.</p>
-<p><a href="https://chatgpt.com/share/687ada87-7bf4-8001-8883-a3a9ed54e9f9">Link to Conversation</a></p>
-<hr>
+<section id="research-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="research-strategy">Research Strategy</h2>
+<section id="tools-and-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="tools-and-dependencies">Tools and Dependencies</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 42%">
+<col style="width: 8%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool / Framework</th>
+<th>Purpose</th>
+<th>Familiarity</th>
+<th>Cost / Access</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub API</strong></td>
+<td>Repository metadata and file access</td>
+<td>High</td>
+<td>Free (rate-limited)</td>
+</tr>
+<tr class="even">
+<td><strong>Jupyter + Python stack</strong></td>
+<td>Data processing and analysis (<code>pandas</code>, <code>seaborn</code>, etc.)</td>
+<td>High</td>
+<td>Free</td>
+</tr>
+<tr class="odd">
+<td><strong>Quarto</strong></td>
+<td>Reproducible reports and publication output (PDF, HTML)</td>
+<td>High</td>
+<td>Free</td>
+</tr>
+<tr class="even">
+<td><strong>LaTeX</strong></td>
+<td>Typesetting for the written report and PDF export</td>
+<td>High</td>
+<td>Free (via Overleaf or local TeX)</td>
+</tr>
+<tr class="odd">
+<td><strong>R</strong></td>
+<td>Statistical modeling or specialized visualization</td>
+<td>Moderate</td>
+<td>Free</td>
+</tr>
+<tr class="even">
+<td><strong>GitHub Copilot Chat</strong></td>
+<td>Code completion, analysis automation</td>
+<td>High</td>
+<td>$10/month (covered by user)</td>
+</tr>
+<tr class="odd">
+<td><strong>GHTorrent (optional)</strong></td>
+<td>Supplemental repo metadata at scale</td>
+<td>Low</td>
+<td>Free</td>
+</tr>
+<tr class="even">
+<td><strong>Software Heritage (optional)</strong></td>
+<td>Track prompt reuse and code lineage</td>
+<td>Low</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="preliminary-validation-pilot-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="preliminary-validation-pilot-analysis">Preliminary Validation: Pilot Analysis</h3>
+<p>To assess the reliability and relevance of our keyword-based repository selection, we conducted a series of exploratory analyses on the merged dataset, described in <a href="https://github.com/n4m3name/SENG404-Project/blob/master/src/pilot/pilot.pdf">../../src/pilot/pilot.qmd</a>. These pilot experiments served to validate the feasibility of our research design and guide the selection of downstream analysis metrics.</p>
+<section id="key-findings" class="level4">
+<h4 class="anchored" data-anchor-id="key-findings">Key Findings:</h4>
+<ul>
+<li><strong>Keyword Match Signal</strong>: While a majority of repositories matched only a single LLM-related keyword, a substantial number exhibited 2+ matches—suggesting deeper integration of prompt-related logic. We use keyword count as a proxy for LLM integration intensity.</li>
+<li><strong>Engagement Metrics</strong>: Repository engagement (stars, forks, watchers) showed wide variance across the sample, and log-transformed engagement distributions were suitable for analysis. This supports the use of these metrics as comparative signals for relevance and community interest.</li>
+<li><strong>Weak Correlation Observed</strong>: A preliminary analysis found a weak positive correlation between the number of LLM-related keywords and a composite engagement score (Pearson’s r ≈ 0.07). This suggests that while there may not be a linear relationship, deeper patterns could emerge with prompt-level analysis.</li>
+<li><strong>Temporal Coverage</strong>: The majority of repositories were created after 2020, with a sharp increase in 2023–2024, coinciding with the surge in public interest in LLMs. This confirms that our sample reflects contemporary LLM development practices.</li>
+<li><strong>Keyword Patterns</strong>: Certain keywords—such as <code>"prompt="</code>, <code>"system"</code>, <code>ChatOpenAI</code>, and <code>PromptTemplate</code>—appeared with high frequency, and some showed stronger presence in high-engagement repositories. These patterns can inform our prompt classification strategy.</li>
+</ul>
+<p>These initial results confirm that our keyword-matching and metadata pipeline successfully surfaces a diverse set of LLM-relevant repositories, suitable for further analysis. The pilot also helped us calibrate the importance of each metadata feature, refine our engagement scoring strategy, and identify prompts for extraction.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
+</section>
+</section>
+</section>
+<section id="methodology-and-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-and-timeline">Methodology and Timeline</h2>
+<div id="56b7484f" class="cell" data-message="false" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proposal_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="project-task-breakdown-and-timeline-rationale" class="level3">
+<h3 class="anchored" data-anchor-id="project-task-breakdown-and-timeline-rationale">Project Task Breakdown and Timeline Rationale</h3>
+<p>This timeline outlines the major components of the project, from early analysis to final presentation. Each task is scheduled based on its dependencies and estimated effort, with built-in buffer time to accommodate review and refinement.</p>
+<section id="data-cleaning-july-1721" class="level4">
+<h4 class="anchored" data-anchor-id="data-cleaning-july-1721">1. Data Cleaning (July 17–21)</h4>
+<p>While I completed the core data collection earlier (GitHub keyword scraping and repository metadata extraction), this stage involves sanitizing the dataset: Handling missing values, normalizing timestamp formats, and verifying repository uniqueness. I will likely attempt to augment the data <a href="#project-metadata-(github-api-and-ghtorrent)">as discussed</a>.<br>
+Estimated time: ~5 days to ensure a clean, reliable dataset before analysis.</p>
+</section>
+<section id="pilot-analysis-writeup-july-1724" class="level4">
+<h4 class="anchored" data-anchor-id="pilot-analysis-writeup-july-1724">2. Pilot Analysis + Writeup (July 17–24)</h4>
+<p>I began exploratory analysis on July 17 to validate that my keyword-matching strategy effectively surfaces LLM-relevant repositories. This includes visualizing keyword density, engagement metrics, and identifying early patterns. I’m also producing a formal writeup for inclusion in the interim report.<br>
+Estimated time: ~1 week to complete analysis and documentation.</p>
+</section>
+<section id="interim-report-july-22august-1" class="level4">
+<h4 class="anchored" data-anchor-id="interim-report-july-22august-1">3. Interim Report (July 22–August 1)</h4>
+<p>The interim report will summarize my progress so far, justify my approach, and include new findings as needed. It will also outline new tools, feasibility, and methodology moving forward.<br>
+Estimated time: ~10 days to allow for drafting, editing, and submission.</p>
+</section>
+<section id="prompt-extraction-july-25august-5" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-extraction-july-25august-5">4. Prompt Extraction (July 25–August 5)</h4>
+<p>I will extract actual prompt strings from the matched files using static code parsing, regex, and heuristics. This step is critical, as it forms the foundation for all downstream prompt classification and metric calculations.<br>
+Estimated time: ~10 days for implementation, testing, and validation.</p>
+</section>
+<section id="prompt-classification-august-110" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-classification-august-110">5. Prompt Classification (August 1–10)</h4>
+<p>Once prompts are extracted, I’ll classify them according to prompt engineering taxonomies (e.g., zero-shot, few-shot, chain-of-thought) and compute structural features such as length, number of examples, or use of system roles.<br>
+Estimated time: ~10 days, with some overlap with extraction to save time.</p>
+</section>
+<section id="engagement-modeling-august-615" class="level4">
+<h4 class="anchored" data-anchor-id="engagement-modeling-august-615">6. Engagement Modeling (August 6–15)</h4>
+<p>Here I’ll test whether different prompt characteristics are associated with engagement metrics (stars, forks, contributors, etc.). This will involve statistical modeling and visualization.<br>
+Estimated time: ~10 days for robust experimentation and interpretation.</p>
+</section>
+<section id="final-report-august-1023" class="level4">
+<h4 class="anchored" data-anchor-id="final-report-august-1023">7. Final Report (August 10–23)</h4>
+<p>This deliverable includes full documentation of the research question, data, methods, and results. It will be written in LaTeX (or Quarto?) with formal citations and polished visuals.<br>
+Estimated time: ~2 weeks, allowing time for writing, feedback, and formatting.</p>
+</section>
+<section id="presentation-prep-august-1520" class="level4">
+<h4 class="anchored" data-anchor-id="presentation-prep-august-1520">8. Presentation Prep (August 15–20)</h4>
+<p>I’ll develop slides, speaking notes, and visuals to clearly present my findings.<br>
+Estimated time: ~5 days for design and rehearsal.</p>
+<p>Each task was scheduled to overlap with minimal dependencies while leaving room for unforeseen revisions. Emphasis was placed on frontloading the classification and modeling work to ensure the final report and presentation are built on a stable foundation of results.</p>
+</section>
+</section>
+<section id="workflow-specification" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-specification">Workflow Specification</h3>
+<p>This section outlines the planned end-to-end methodology for the project, from data acquisition to statistical analysis and presentation.</p>
+<section id="data-sources" class="level4">
+<h4 class="anchored" data-anchor-id="data-sources">Data Sources</h4>
+<p>The study uses two layers of data:</p>
+<ul>
+<li><strong>Keyword-Matched Repositories</strong> from the GitHub Search API, filtered using a curated set of 30+ LLM-related keywords.</li>
+<li><strong>Repository Metadata</strong> from the GitHub REST API, including stars, forks, watchers, open issues, and timestamps.</li>
+</ul>
+<p>Where feasible, supplemental metadata may be obtained from <strong>GHTorrent</strong> or <strong>Software Heritage</strong> to validate or extend API-based insights (especially for contributor history or prompt reuse across forks).</p>
+</section>
+<section id="filtering-criteria" class="level4">
+<h4 class="anchored" data-anchor-id="filtering-criteria">Filtering Criteria</h4>
+<ul>
+<li><strong>Keyword Count ≥ 2</strong>: Repositories with at least two distinct LLM-related keyword matches will be prioritized for downstream analysis, as they are more likely to meaningfully integrate prompt engineering.</li>
+<li><strong>Language Filter</strong>: Initially limited to Python-based repositories (based on GitHub’s metadata), given tooling and LLM ecosystem alignment.</li>
+<li><strong>Repository Status</strong>: Archived or empty repositories are excluded.</li>
+</ul>
+</section>
+<section id="prompt-extraction-and-processing" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-extraction-and-processing">Prompt Extraction and Processing</h4>
+<ul>
+<li><strong>Prompt Detection</strong>: Static code parsing (AST), regex pattern matching, and structural heuristics will be used to extract prompt-like strings.</li>
+<li><strong>Artifact Metadata</strong>: Each prompt will retain references to its source file, position, commit ID, and author (if available).</li>
+<li><strong>Deduplication and Grouping</strong>: Near-duplicate prompts will be clustered to identify reuse and evolution across files or repositories.</li>
+</ul>
+</section>
+<section id="prompt-classification" class="level4">
+<h4 class="anchored" data-anchor-id="prompt-classification">Prompt Classification</h4>
+<ul>
+<li>Prompts will be categorized using published prompt taxonomies:
+<ul>
+<li><strong>Zero-shot</strong>, <strong>Few-shot</strong>, <strong>Chain-of-thought</strong>, etc.</li>
+</ul></li>
+<li>Structural metrics will also be computed:
+<ul>
+<li>Length (tokens/chars), number of examples, presence of system roles, etc.</li>
+</ul></li>
+<li>Where feasible, quality-related features from the literature may be computed (e.g., instruction clarity, verbosity, etc.).</li>
+</ul>
+</section>
+<section id="repository-level-metrics" class="level4">
+<h4 class="anchored" data-anchor-id="repository-level-metrics">Repository-Level Metrics</h4>
+<p>The following indicators will be computed per repository:</p>
+<ul>
+<li>Contributor count (if feasible)</li>
+<li>Engagement score (based on stars, forks, watchers — potentially log-normalized)</li>
+<li>Project longevity (based on creation vs last commit)</li>
+<li>Issue activity (if GHTorrent integration is successful)</li>
+</ul>
+</section>
+<section id="analysis-and-validation" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-and-validation">Analysis and Validation</h4>
+<ul>
+<li>Exploratory statistics and correlation matrices will be used to assess relationships between prompt-level features and engagement/activity metrics.</li>
+<li>Regression models (linear or logistic, depending on outcomes) may be used to model engagement predictors.</li>
+<li>If prompt authorship data is extractable, interaction analysis may be run to test whether prompt collaboration predicts broader project activity.</li>
+</ul>
+</section>
+<section id="timeline-consideration" class="level4">
+<h4 class="anchored" data-anchor-id="timeline-consideration">Timeline Consideration</h4>
+<p>Even though much of the raw data is already acquired, <strong>writing reliable extraction and classification logic</strong>, <strong>validating features</strong>, and <strong>testing models</strong> is time-intensive. The planned timeline includes several overlapping stages and buffer zones to accommodate iteration and debugging.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
+</section>
+</section>
+</section>
+<section id="expected-results" class="level2">
+<h2 class="anchored" data-anchor-id="expected-results">Expected Results</h2>
+<p>Based on the preliminary pilot analysis and prior literature, I expect to find:</p>
+<ul>
+<li><p><strong>Stronger correlations at the prompt level</strong>: While pilot results showed only a weak correlation (r ≈ 0.07) between keyword count and engagement, more meaningful associations may emerge once detailed prompt-level features (e.g.&nbsp;structure, examples, contributor overlap) are extracted and classified.</p></li>
+<li><p><strong>Prompt complexity as an engagement signal</strong>: More advanced prompt types—such as few-shot or chain-of-thought—are expected to appear more often in high-engagement repositories, where LLMs are likely used in core logic.</p></li>
+<li><p><strong>Collaborative prompt authorship</strong>: Repositories with prompts that involve multiple contributors or edits may correlate with higher contributor counts and a more active issue tracker, suggesting prompt engineering as a shared, iterative process.</p></li>
+<li><p><strong>Prompt reuse and project maturity</strong>: Reused or versioned prompts may indicate maturity and intentional design practices, potentially correlating with longevity or stability metrics.</p></li>
+<li><p><strong>Temporal trends</strong>: Repositories created in 2023–2024 are expected to exhibit more sophisticated prompt structures, reflecting the broader adoption of LLM tooling and techniques during this period.</p></li>
+</ul>
+<p>Overall, I expect that prompt characteristics will serve as useful signals of project complexity, collaboration, and developer engagement—validating their role as first-class engineering artifacts.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>Several constraints may affect the strength or interpretability of the final results:</p>
+<ul>
+<li><p><strong>Weak correlation in early results</strong>: The pilot analysis revealed only a modest relationship between keyword count and engagement, indicating that high-level keyword matching may not fully capture the nuance of LLM integration. This raises the possibility that even prompt-level analysis might yield subtle or nonlinear associations.</p></li>
+<li><p><strong>GitHub API rate limits</strong>: Repository and contributor metadata are retrieved through the GitHub API, which imposes rate limits. This restricts the volume of data that can be gathered in a short time and may limit the diversity or completeness of the sample.</p></li>
+<li><p><strong>Noise and ambiguity in prompt detection</strong>: Extracting prompts from source code using static parsing and regex involves heuristics that may yield false positives (non-prompts) or miss edge cases (multi-line prompts, dynamic constructions). This could introduce noise in the classification phase.</p></li>
+<li><p><strong>Resource-intensive processing</strong>: Extracting, deduplicating, and classifying prompts across hundreds of repositories is computationally expensive and time-consuming, especially when maintaining file- and commit-level traceability.</p></li>
+<li><p><strong>Repository heterogeneity</strong>: Engagement metrics (e.g.&nbsp;stars, forks) are only rough proxies for real developer activity or quality. They may be influenced by external factors like social visibility, not just engineering practices.</p></li>
+<li><p><strong>Limited generalizability</strong>: The project is currently scoped to Python repositories matching specific LLM-related keywords. As a result, findings may not generalize to other languages or non-GitHub ecosystems.</p></li>
+</ul>
+<p>Despite these limitations, the combination of pilot insights and structured prompt analysis provides a strong basis for exploring meaningful correlations between prompt engineering and real-world project dynamics.</p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -122,6 +409,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Zhou, W., Liu, J., &amp; Sun, M. (2024). <em>A Systematic Survey of Prompt Engineering in Large Language Models</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2402.07927">arXiv:2402.07927</a></p>
 <p>Li, X., Zhang, S., &amp; Chen, M. (2023). <em>ROSCOE: A Benchmark for Reasoning Over Chain-of-Thought Explanations</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2212.07919">arXiv:2212.07919</a></p>
 <p>Diao, W., Liu, Y., &amp; Su, Y. (2024). <em>Economical Prompting Index: Balancing Accuracy and Cost in LLM Prompts</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2412.01690">arXiv:2412.01690</a></p>
+<p><span class="math display">\[
+\sim\sim\sim
+\]</span></p>
+</section>
+<section id="disclaimer-use-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer-use-of-ai"><em>Disclaimer: Use of AI</em></h2>
+<p>I am a full-blown AI enthusiast and believe it is as or more important for humanity than the printing press. I use it for absolutely everything.</p>
+<section id="formal-disclaimer" class="level3">
+<h3 class="anchored" data-anchor-id="formal-disclaimer"><em>Formal Disclaimer</em></h3>
+<p>Portions of this proposal (initial topic brainstorming, paper identification, text drafting, coding, this paragraph) were generated with the assistance of OpenAI’s ChatGPT-4o. All content was critically reviewed, edited, and verified by the author. The model was used to drastically enhance productivity and clarity but not to replace original decision-making.</p>
 </section>
 </section>
 
