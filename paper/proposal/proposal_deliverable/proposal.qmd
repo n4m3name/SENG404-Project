@@ -119,7 +119,6 @@ $$
 #| message: false
 #| warning: false
 
-# your plotting code here
 import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime
