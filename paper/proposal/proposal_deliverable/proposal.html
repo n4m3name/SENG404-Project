@@ -80,22 +80,25 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.csv">../data/matched_repositories.csv</a></li>
 <li><a href="https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.json">../data/matched_repositories.json)</a></li>
 </ul>
-<p>The complete code for this data collection process is documented in <a href="https://github.com/n4m3name/SENG404-Project/blob/master/src/data_sourcing.ipynb">../src/data_sourcing.ipynb</a>.</p>
+<p>The complete code for this data collection and early processing process is documented in <a href="https://github.com/n4m3name/SENG404-Project/blob/master/src/data_sourcing.ipynb">../src/data_sourcing.ipynb</a>.</p>
+</section>
+<section id="project-metadata-github-api-and-ghtorrent" class="level3">
+<h3 class="anchored" data-anchor-id="project-metadata-github-api-and-ghtorrent">Project Metadata (GitHub API and GHTorrent)</h3>
+<p>To supplement our keyword-based prompt discovery with repository-level context, we retrieved metadata for each matched repository using the GitHub API.</p>
+<p>For each repository, we collected:</p>
+<ul>
+<li><strong>Stars, forks, watchers</strong> — as high-level proxies for community interest</li>
+<li><strong>Open issues</strong> — to approximate project activity and maintenance</li>
+<li><strong>Repository timestamps</strong> (<code>created_at</code>, <code>updated_at</code>, <code>pushed_at</code>) — for lifecycle analysis</li>
+<li><strong>License, language, and description</strong> — to support filtering and categorization</li>
+<li><strong>Default branch</strong> — required for linking to prompt files and future mining</li>
+</ul>
+<p>This metadata was merged with our keyword-matching dataset (see <a href="https://github.com/n4m3name/SENG404-Project/blob/master/data/combined_repository_data.csv">../data/combined_repository_data.csv</a>), creating a unified view of prompt relevance and project health. The merged data is saved in both <code>.csv</code> and <code>.json</code> format to support both manual review and downstream analysis.</p>
+<p>If time and scope allow, we may also incorporate contributor-level metrics (e.g.&nbsp;commit count, contributor overlap) and validate repository activity using <a href="http://ghtorrent.org/">GHTorrent</a> to support scalable analysis beyond API rate limits.</p>
 </section>
 <section id="prompt-artifacts" class="level3">
 <h3 class="anchored" data-anchor-id="prompt-artifacts">Prompt Artifacts</h3>
 <p>Prompt strings will be extracted from relevant source files using a combination of static code parsing (e.g.&nbsp;Python AST), regex-based string analysis, and heuristics for identifying natural language input patterns. Prompts will be categorized by type using existing taxonomies <a href="#references">(Zhou et al., 2024)</a>, and features such as length, example count, and reuse will be computed automatically. File-level and commit-level metadata will be retained for all prompt artifacts.</p>
-</section>
-<section id="project-metadata-github-api-and-ghtorrent" class="level3">
-<h3 class="anchored" data-anchor-id="project-metadata-github-api-and-ghtorrent">Project Metadata (GitHub API and GHTorrent)</h3>
-<p>For each selected repository, we will collect:</p>
-<ul>
-<li>Contributor count and commit history (via the GitHub API)</li>
-<li>Issue and pull request activity (via the GitHub API or GHTorrent)</li>
-<li>Timestamps for prompt-related commits</li>
-<li>Stars and forks (as high-level engagement proxies)</li>
-</ul>
-<p>Where available, GHTorrent will be used to validate or supplement GitHub API results at larger scale.</p>
 </section>
 <section id="optional-software-heritage-graph" class="level3">
 <h3 class="anchored" data-anchor-id="optional-software-heritage-graph">Optional: Software Heritage Graph</h3>

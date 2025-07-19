@@ -39,19 +39,24 @@ The output is saved in both `.csv` and `.json` formats under the `/data` directo
 
 The complete code for this data collection and early processing process is documented in [../src/data_sourcing.ipynb](https://github.com/n4m3name/SENG404-Project/blob/master/src/data_sourcing.ipynb).
 
+### Project Metadata (GitHub API and GHTorrent)
+
+To supplement our keyword-based prompt discovery with repository-level context, we retrieved metadata for each matched repository using the GitHub API.
+
+For each repository, we collected:
+
+* **Stars, forks, watchers** — as high-level proxies for community interest
+* **Open issues** — to approximate project activity and maintenance
+* **Repository timestamps** (`created_at`, `updated_at`, `pushed_at`) — for lifecycle analysis
+* **License, language, and description** — to support filtering and categorization
+* **Default branch** — required for linking to prompt files and future mining
+
+This metadata was merged with our keyword-matching dataset (see [../data/combined_repository_data.csv](https://github.com/n4m3name/SENG404-Project/blob/master/data/combined_repository_data.csv)), creating a unified view of prompt relevance and project health. The merged data is saved in both `.csv` and `.json` format to support both manual review and downstream analysis.
+
+If time and scope allow, we may also incorporate contributor-level metrics (e.g. commit count, contributor overlap) and validate repository activity using [GHTorrent](http://ghtorrent.org/) to support scalable analysis beyond API rate limits.
 
 ### Prompt Artifacts  
 Prompt strings will be extracted from relevant source files using a combination of static code parsing (e.g. Python AST), regex-based string analysis, and heuristics for identifying natural language input patterns. Prompts will be categorized by type using existing taxonomies [(Zhou et al., 2024)](#references), and features such as length, example count, and reuse will be computed automatically. File-level and commit-level metadata will be retained for all prompt artifacts.
-
-### Project Metadata (GitHub API and GHTorrent) 
-For each selected repository, we will collect:
-
-* Contributor count and commit history (via the GitHub API)
-* Issue and pull request activity (via the GitHub API or GHTorrent)
-* Timestamps for prompt-related commits
-* Stars and forks (as high-level engagement proxies)
-
-Where available, GHTorrent will be used to validate or supplement GitHub API results at larger scale.
 
 ### Optional: Software Heritage Graph  
 If time and tooling permit, the Software Heritage Graph will be used to trace prompt files across forks and versions, allowing us to observe reuse and evolution beyond a single repository.
