@@ -61,6 +61,20 @@ Prompt strings will be extracted from relevant source files using a combination 
 ### Optional: Software Heritage Graph  
 If time and tooling permit, the Software Heritage Graph will be used to trace prompt files across forks and versions, allowing us to observe reuse and evolution beyond a single repository.
 
+### Preliminary Validation: Pilot Analysis
+
+To assess the reliability and relevance of our keyword-based repository selection, we conducted a series of exploratory analyses on the merged dataset, described in [../../src/pilot/pilot.qmd](https://github.com/n4m3name/SENG404-Project/blob/master/src/pilot/pilot.pdf). These pilot experiments served to validate the feasibility of our research design and guide the selection of downstream analysis metrics.
+
+#### Key Findings:
+
+* **Keyword Match Signal**: While a majority of repositories matched only a single LLM-related keyword, a substantial number exhibited 2+ matches—suggesting deeper integration of prompt-related logic. We use keyword count as a proxy for LLM integration intensity.
+* **Engagement Metrics**: Repository engagement (stars, forks, watchers) showed wide variance across the sample, and log-transformed engagement distributions were suitable for analysis. This supports the use of these metrics as comparative signals for relevance and community interest.
+* **Weak Correlation Observed**: A preliminary analysis found a weak positive correlation between the number of LLM-related keywords and a composite engagement score (Pearson’s r ≈ 0.07). This suggests that while there may not be a linear relationship, deeper patterns could emerge with prompt-level analysis.
+* **Temporal Coverage**: The majority of repositories were created after 2020, with a sharp increase in 2023–2024, coinciding with the surge in public interest in LLMs. This confirms that our sample reflects contemporary LLM development practices.
+* **Keyword Patterns**: Certain keywords—such as `"prompt="`, `"system"`, `ChatOpenAI`, and `PromptTemplate`—appeared with high frequency, and some showed stronger presence in high-engagement repositories. These patterns can inform our prompt classification strategy.
+
+These initial results confirm that our keyword-matching and metadata pipeline successfully surfaces a diverse set of LLM-relevant repositories, suitable for further analysis. The pilot also helped us calibrate the importance of each metadata feature, refine our engagement scoring strategy, and identify prompts for extraction.
+
 
 
 ---
