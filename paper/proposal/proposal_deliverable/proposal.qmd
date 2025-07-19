@@ -1,4 +1,4 @@
-# SENG404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories
+# SENG-404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories
 
 Evan Strasdin - V00907185  
 [Git Link](https://github.com/n4m3name/SENG404-Project)
@@ -15,16 +15,14 @@ This study addresses that gap by combining prompt classification with software r
 
 ## Research Question
 
-This study investigates the relationship between prompt design and project-level collaboration in LLM-powered open-source software.
-
-Specifically: Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?
+Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?
 
 We will analyze prompt artifacts extracted from public repositories and apply a combination of classification (for example, by prompt type) and metric-based evaluation (such as prompt length and contributor interaction). These features will be compared against repository-level signals of activity, including contributor count, issue resolution rate, and project growth over time.
 
 ## Expected Data Sources
 
 ### Repository Selection (GitHub Search and GitHub API)  
-To identify candidate repositories for our study, we performed a keyword-based search over public GitHub code using the [GitHub Search API](https://docs.github.com/en/rest/search?apiVersion=2022-11-28). We designed an expanded list of 30+ LLM-related keywords targeting common APIs, prompt engineering patterns, and framework imports, such as:
+To identify candidate repositories for our study, we performed a keyword-based search over public GitHub code using the [GitHub Search API](https://docs.github.com/en/rest/search?apiVersion=2022-11-28). We designed a list of 30+ LLM-related keywords targeting common APIs, prompt engineering patterns, and framework imports, such as:
 
 * `openai.ChatCompletion.create`, `PromptTemplate`, `RetrievalQA`
 * `"prompt = "`, `"system": "`
@@ -36,14 +34,10 @@ To rank repository relevance, we grouped results by repository and counted how m
 
 The output is saved in both `.csv` and `.json` formats under the `/data` directory:
 
-* [`matched_repositories.csv`](../data/matched_repositories.csv)
-* [`matched_repositories.json`](../data/matched_repositories.json)
+* [../data/matched_repositories.csv](https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.csv)
+* [../data/matched_repositories.json)](https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.json)
 
-The complete code for this data collection process is documented in [`../src/data_sourcing.ipynb`](../src/data_sourcing.ipynb).
-
----
-
-Let me know if you also want a section for data limitations or next steps!
+The complete code for this data collection and early processing process is documented in [../src/data_sourcing.ipynb](https://github.com/n4m3name/SENG404-Project/blob/master/src/data_sourcing.ipynb).
 
 
 ### Prompt Artifacts  

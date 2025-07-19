@@ -47,8 +47,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="seng404-project-proposal-prompt-engineering-and-project-engagement-in-llm-enabled-repositories" class="level1">
-<h1>SENG404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</h1>
+<section id="seng-404-project-proposal-prompt-engineering-and-project-engagement-in-llm-enabled-repositories" class="level1">
+<h1>SENG-404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</h1>
 <p>Evan Strasdin - V00907185<br>
 <a href="https://github.com/n4m3name/SENG404-Project">Git Link</a></p>
 <section id="motivation" class="level2">
@@ -60,15 +60,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>This study investigates the relationship between prompt design and project-level collaboration in LLM-powered open-source software.</p>
-<p>Specifically: Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?</p>
+<p>Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?</p>
 <p>We will analyze prompt artifacts extracted from public repositories and apply a combination of classification (for example, by prompt type) and metric-based evaluation (such as prompt length and contributor interaction). These features will be compared against repository-level signals of activity, including contributor count, issue resolution rate, and project growth over time.</p>
 </section>
 <section id="expected-data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="expected-data-sources">Expected Data Sources</h2>
 <section id="repository-selection-github-search-and-github-api" class="level3">
 <h3 class="anchored" data-anchor-id="repository-selection-github-search-and-github-api">Repository Selection (GitHub Search and GitHub API)</h3>
-<p>To identify candidate repositories for our study, we performed a keyword-based search over public GitHub code using the <a href="https://docs.github.com/en/rest/search?apiVersion=2022-11-28">GitHub Search API</a>. We designed an expanded list of 30+ LLM-related keywords targeting common APIs, prompt engineering patterns, and framework imports, such as:</p>
+<p>To identify candidate repositories for our study, we performed a keyword-based search over public GitHub code using the <a href="https://docs.github.com/en/rest/search?apiVersion=2022-11-28">GitHub Search API</a>. We designed a list of 30+ LLM-related keywords targeting common APIs, prompt engineering patterns, and framework imports, such as:</p>
 <ul>
 <li><code>openai.ChatCompletion.create</code>, <code>PromptTemplate</code>, <code>RetrievalQA</code></li>
 <li><code>"prompt = "</code>, <code>"system": "</code></li>
@@ -78,12 +77,10 @@ ul.task-list li input[type="checkbox"] {
 <p>To rank repository relevance, we grouped results by repository and counted how many distinct keywords each repository matched. The rationale is that repositories containing multiple LLM-specific keywords are more likely to integrate structured prompt engineering practices rather than incidental mentions.</p>
 <p>The output is saved in both <code>.csv</code> and <code>.json</code> formats under the <code>/data</code> directory:</p>
 <ul>
-<li><a href="../data/matched_repositories.csv"><code>matched_repositories.csv</code></a></li>
-<li><a href="../data/matched_repositories.json"><code>matched_repositories.json</code></a></li>
+<li><a href="https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.csv">../data/matched_repositories.csv</a></li>
+<li><a href="https://github.com/n4m3name/SENG404-Project/blob/master/data/matched_repositories.json">../data/matched_repositories.json)</a></li>
 </ul>
-<p>The complete code for this data collection process is documented in <a href="../src/data_sourcing.ipynb"><code>../src/data_sourcing.ipynb</code></a>.</p>
-<hr>
-<p>Let me know if you also want a section for data limitations or next steps!</p>
+<p>The complete code for this data collection process is documented in <a href="https://github.com/n4m3name/SENG404-Project/blob/master/src/data_sourcing.ipynb">../src/data_sourcing.ipynb</a>.</p>
 </section>
 <section id="prompt-artifacts" class="level3">
 <h3 class="anchored" data-anchor-id="prompt-artifacts">Prompt Artifacts</h3>
