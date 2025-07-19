@@ -1,9 +1,13 @@
 # AI Sessions
 
-This file stores links to AI sessions that guided the development of the project.
+This file stores prompts and links to AI sessions that guided the development of the project.
 
 ## Deliverables
 
-### [Proposal](../paper/proposal/proposal_deliverable/proposal.qmd), [Data Sourcing](../src/data_sourcing.ipynb)
+### [Proposal](../paper/proposal/proposal_deliverable/proposal.qmd), [Data Sourcing](../src/data_sourcing.ipynb): [Link to chat]()
 
-[Link]()
+## Copilot - Agent mode, Claude Sonnet 4
+
+### Pilot analysis:
+- "I need you to - WITHOUT EDITING ANY FILE EXCEPT pilot.qmd - write appropriate pilot experiments using cobined_repository_data.json. Appropriateness should be defined by what you read in outline.qmd, proposal.qmd. data_sourcing.qmd contains what has already been done. Remember that the ONLY file you are allowed to edit is pilot.qmd!!!"
+- "add a block at the beginning which installs rquired packages if not already existing in env"

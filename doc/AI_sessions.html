@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>proposal</title>
+<title>ai_sessions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,17 +23,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="proposal_files/libs/clipboard/clipboard.min.js"></script>
-<script src="proposal_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="proposal_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="proposal_files/libs/quarto-html/popper.min.js"></script>
-<script src="proposal_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="proposal_files/libs/quarto-html/anchor.min.js"></script>
-<link href="proposal_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="proposal_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="proposal_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="proposal_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="proposal_files/libs/bootstrap/bootstrap-41d128fa7d2fc35e15c5440c3becc28b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="AI_sessions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="AI_sessions_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="AI_sessions_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="AI_sessions_files/libs/quarto-html/popper.min.js"></script>
+<script src="AI_sessions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="AI_sessions_files/libs/quarto-html/anchor.min.js"></script>
+<link href="AI_sessions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="AI_sessions_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="AI_sessions_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="AI_sessions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="AI_sessions_files/libs/bootstrap/bootstrap-41d128fa7d2fc35e15c5440c3becc28b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,81 +47,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="seng-404-project-proposal-prompt-engineering-and-project-engagement-in-llm-enabled-repositories" class="level1">
-<h1>SENG-404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories</h1>
-<p>Evan Strasdin - V00907185<br>
-<a href="https://github.com/n4m3name/SENG404-Project">Git Link</a></p>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Large Language Models (LLMs) like GPT-4 are now central to many software systems, with open-source tools such as LangChain, AutoGPT, and llama.cpp enabling developers to build entire applications around model behavior. In these systems, prompts are not just inputs: they function as logic, guiding how the model reasons, responds, and performs tasks. As a result, prompt engineering has become a core software development activity.</p>
-<p>Recent research has begun to formalize this space. Studies have introduced taxonomies of prompt types, such as zero-shot, few-shot, and chain-of-thought prompting <a href="#references">(Zhou et al., 2024)</a>, and proposed metrics for evaluating prompt quality, including reasoning coherence <a href="#references">(Li et al., 2023)</a> and cost-efficiency <a href="#references">(Diao et al., 2024)</a>. Other work has analyzed how prompts evolve over time in open-source repositories <a href="#references">(Tafreshipour et al., 2024)</a>.</p>
-<p>However, it remains unclear whether prompt characteristics, both in terms of type and engineering behaviors (such as complexity, reuse, or collaborative authorship), are associated with broader indicators of project activity and engagement, such as contributor count, issue resolution rate, or project growth.</p>
-<p>This study addresses that gap by combining prompt classification with software repository mining. We will apply established prompt type categories and measure engineering-related characteristics such as length, example count, and contributor overlap. Where appropriate, we may explore additional quality metrics inspired by recent research. Our goal is to uncover whether observable prompt patterns relate to collaboration and development dynamics in real-world LLM-integrated projects.</p>
+<section id="ai-sessions" class="level1">
+<h1>AI Sessions</h1>
+<p>This file stores links to AI sessions that guided the development of the project.</p>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<section id="proposal-data-sourcing-link-to-chat" class="level3">
+<h3 class="anchored" data-anchor-id="proposal-data-sourcing-link-to-chat"><a href="../paper/proposal/proposal_deliverable/proposal.qmd">Proposal</a>, <a href="../src/data_sourcing.ipynb">Data Sourcing</a>: <a href="">Link to chat</a></h3>
 </section>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?</p>
-<p>We will analyze prompt artifacts extracted from public repositories and apply a combination of classification (for example, by prompt type) and metric-based evaluation (such as prompt length and contributor interaction). These features will be compared against repository-level signals of activity, including contributor count, issue resolution rate, and project growth over time.</p>
 </section>
-<section id="expected-data-sources" class="level2">
-<h2 class="anchored" data-anchor-id="expected-data-sources">Expected Data Sources</h2>
-<section id="repository-selection-github-search-and-github-api" class="level3">
-<h3 class="anchored" data-anchor-id="repository-selection-github-search-and-github-api">Repository Selection (GitHub Search and GitHub API)</h3>
-<p>To identify candidate repositories for our study, we performed a keyword-based search over public GitHub code using the <a href="https://docs.github.com/en/rest/search?apiVersion=2022-11-28">GitHub Search API</a>. We designed a list of 30+ LLM-related keywords targeting common APIs, prompt engineering patterns, and framework imports, such as:</p>
+<section id="copilot---agent-mode-claude-sonnet-4" class="level2">
+<h2 class="anchored" data-anchor-id="copilot---agent-mode-claude-sonnet-4">Copilot - Agent mode, Claude Sonnet 4</h2>
+<section id="pilot-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="pilot-analysis">Pilot analysis:</h3>
 <ul>
-<li><code>openai.ChatCompletion.create</code>, <code>PromptTemplate</code>, <code>RetrievalQA</code></li>
-<li><code>"prompt = "</code>, <code>"system": "</code></li>
-<li><code>llama_cpp</code>, <code>AutoGPT</code>, <code>FAISS</code>, <code>transformers.pipeline</code>, and others</li>
+<li>“I need you to - WITHOUT EDITING ANY FILE EXCEPT pilot.qmd - write appropriate pilot experiments using cobined_repository_data.json. Appropriateness should be defined by what you read in outline.qmd, proposal.qmd. data_sourcing.qmd contains what has already been done. Remember that the ONLY file you are allowed to edit is pilot.qmd!!!”</li>
+<li>“add a block at the beginning which installs rquired packages if not already existing in env”</li>
 </ul>
-<p>For each keyword, we retrieved up to 250 results across 5 paginated requests (50 results per page). Each code match was associated with metadata including the repository name, file path, and matched keyword.</p>
-<p>To rank repository relevance, we grouped results by repository and counted how many distinct keywords each repository matched. The rationale is that repositories containing multiple LLM-specific keywords are more likely to integrate structured prompt engineering practices rather than incidental mentions.</p>
-<p>The output is saved in both <code>.csv</code> and <code>.json</code> formats under the <code>/data</code> directory:</p>
-<ul>
-<li><a href="../data/matched_repositories.csv">matched_repositories.csv</a></li>
-<li><a href="../data/matched_repositories.json">matched_repositories.json</a></li>
-</ul>
-<p>The complete code for this data collection and early processing process is documented in <a href="../src/data_sourcing.ipynb">data_sourcing.ipynb</a>.</p>
 </section>
-<section id="project-metadata-github-api-and-ghtorrent" class="level3">
-<h3 class="anchored" data-anchor-id="project-metadata-github-api-and-ghtorrent">Project Metadata (GitHub API and GHTorrent)</h3>
-<p>To supplement our keyword-based prompt discovery with repository-level context, we retrieved metadata for each matched repository using the GitHub API.</p>
-<p>For each repository, we collected:</p>
-<ul>
-<li><strong>Stars, forks, watchers</strong> — as high-level proxies for community interest</li>
-<li><strong>Open issues</strong> — to approximate project activity and maintenance</li>
-<li><strong>Repository timestamps</strong> (<code>created_at</code>, <code>updated_at</code>, <code>pushed_at</code>) — for lifecycle analysis</li>
-<li><strong>License, language, and description</strong> — to support filtering and categorization</li>
-<li><strong>Default branch</strong> — required for linking to prompt files and future mining</li>
-</ul>
-<p>This metadata was merged with our keyword-matching dataset (see <a href="../data/combined_repository_data.csv">combined_repository_data.csv</a>), creating a unified view of prompt relevance and project health. The merged data is saved in both <code>.csv</code> and <code>.json</code> format to support both manual review and downstream analysis.</p>
-<p>If time and scope allow, we may also incorporate contributor-level metrics (e.g.&nbsp;commit count, contributor overlap) and validate repository activity using <a href="http://ghtorrent.org/">GHTorrent</a> to support scalable analysis beyond API rate limits.</p>
-</section>
-<section id="prompt-artifacts" class="level3">
-<h3 class="anchored" data-anchor-id="prompt-artifacts">Prompt Artifacts</h3>
-<p>Prompt strings will be extracted from relevant source files using a combination of static code parsing (e.g.&nbsp;Python AST), regex-based string analysis, and heuristics for identifying natural language input patterns. Prompts will be categorized by type using existing taxonomies <a href="#references">(Zhou et al., 2024)</a>, and features such as length, example count, and reuse will be computed automatically. File-level and commit-level metadata will be retained for all prompt artifacts.</p>
-</section>
-<section id="optional-software-heritage-graph" class="level3">
-<h3 class="anchored" data-anchor-id="optional-software-heritage-graph">Optional: Software Heritage Graph</h3>
-<p>If time and tooling permit, the Software Heritage Graph will be used to trace prompt files across forks and versions, allowing us to observe reuse and evolution beyond a single repository.</p>
-<hr>
-</section>
-</section>
-<section id="disclaimer-use-of-ai" class="level2">
-<h2 class="anchored" data-anchor-id="disclaimer-use-of-ai">Disclaimer: Use of AI</h2>
-<p>I am a full-blown AI enthusiast and believe it is as or more important for humanity than the printing press. I use it for absolutely everything, thus in order to conform to the the <a href="https://llm-guidelines.org/guidelines/">suggested guidelines</a>, I will link directly to the conversation(s) pertaining to the assignment.</p>
-<section id="formal-disclaimer" class="level3">
-<h3 class="anchored" data-anchor-id="formal-disclaimer">Formal Disclaimer</h3>
-<p>Portions of this proposal (initial topic brainstorming, paper identification, text drafts, this paragraph) were generated with the assistance of OpenAI’s ChatGPT-4o. All content was critically reviewed, edited, and verified by the author. The model was used to enhance productivity and clarity but not to replace original analysis or decision-making.</p>
-<p><a href="https://chatgpt.com/share/687ada87-7bf4-8001-8883-a3a9ed54e9f9">Link to Conversation</a></p>
-<hr>
-</section>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Tafreshipour, A., Salami, M., &amp; Pradel, M. (2024). <em>Prompting in the Wild: An Empirical Study of Prompt Evolution in Software Repositories</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2412.17298">arXiv:2412.17298</a></p>
-<p>Zhou, W., Liu, J., &amp; Sun, M. (2024). <em>A Systematic Survey of Prompt Engineering in Large Language Models</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2402.07927">arXiv:2402.07927</a></p>
-<p>Li, X., Zhang, S., &amp; Chen, M. (2023). <em>ROSCOE: A Benchmark for Reasoning Over Chain-of-Thought Explanations</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2212.07919">arXiv:2212.07919</a></p>
-<p>Diao, W., Liu, Y., &amp; Su, Y. (2024). <em>Economical Prompting Index: Balancing Accuracy and Cost in LLM Prompts</em>. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2412.01690">arXiv:2412.01690</a></p>
 </section>
 </section>
 
