@@ -6,5 +6,5 @@ I've decided to include a this as I enjoy clean file structures and .qmd renderi
 
 The way I will structure the `paper` folder is as follows:
 - `<assignment_name>/`: Contains the following:
-  - `<assignment_name>_assignment/`: Contains the **actual assignment writeup** in `.qmd` format.
-  - `<assignment_name>_outline/`: Contains the assignment outline in `.qmd` format
+  - `<assignment_name>_deliverable/`: Contains the **actual assignment writeup** in `.qmd` format.
+  - `outline/`: Contains the assignment outline in `.qmd` format

@@ -1,0 +1,68 @@
+# SENG404 Project Proposal: Prompt Engineering and Project Engagement in LLM-Enabled Repositories
+
+Evan Strasdin - V00907185
+
+## Motivation
+
+Large Language Models (LLMs) like GPT-4 are now central to many software systems, with open-source tools such as LangChain, AutoGPT, and llama.cpp enabling developers to build entire applications around model behavior. In these systems, prompts are not just inputs: they function as logic, guiding how the model reasons, responds, and performs tasks. As a result, prompt engineering has become a core software development activity.
+
+Recent research has begun to formalize this space. Studies have introduced taxonomies of prompt types, such as zero-shot, few-shot, and chain-of-thought prompting [(Zhou et al., 2024)](#references), and proposed metrics for evaluating prompt quality, including reasoning coherence [(Li et al., 2023)](#references) and cost-efficiency [(Diao et al., 2024)](#references). Other work has analyzed how prompts evolve over time in open-source repositories [(Tafreshipour et al., 2024)](#references).
+
+However, it remains unclear whether prompt characteristics, both in terms of type and engineering behaviors (such as complexity, reuse, or collaborative authorship), are associated with broader indicators of project activity and engagement, such as contributor count, issue resolution rate, or project growth.
+
+This study addresses that gap by combining prompt classification with software repository mining. We will apply established prompt type categories and measure engineering-related characteristics such as length, example count, and contributor overlap. Where appropriate, we may explore additional quality metrics inspired by recent research. Our goal is to uncover whether observable prompt patterns relate to collaboration and development dynamics in real-world LLM-integrated projects.
+
+## Research Question
+
+This study investigates the relationship between prompt design and project-level collaboration in LLM-powered open-source software.
+
+Specifically: Do prompt characteristics, such as type, complexity, reuse, and collaborative authorship, correlate with indicators of project activity and engagement in open-source LLM-integrated repositories?
+
+We will analyze prompt artifacts extracted from public repositories and apply a combination of classification (for example, by prompt type) and metric-based evaluation (such as prompt length and contributor interaction). These features will be compared against repository-level signals of activity, including contributor count, issue resolution rate, and project growth over time.
+
+## Expected Data Sources
+
+**Repository Identification (GitHub Search and GitHub API)**
+We will identify a curated set of 30 to 50 open-source repositories using GitHub's advanced search and the GitHub REST API. Repositories will be selected based on the presence of LLM-related frameworks such as `langchain`, `openai`, `llama-cpp`, or similar in their dependencies, imports, or file structure. Search queries will target files containing LLM API calls (e.g. `openai.ChatCompletion.create`), use of prompt-related abstractions (e.g. `PromptTemplate`), or natural language prompts embedded in `.py`, `.js`, `.ts`, `.json`, `.yaml`, or `.txt` files.
+
+**Prompt Artifacts**
+Prompt strings will be extracted from relevant source files using a combination of static code parsing (e.g. Python AST), regex-based string analysis, and heuristics for identifying natural language input patterns. Prompts will be categorized by type using existing taxonomies [(Zhou et al., 2024)](#references), and features such as length, example count, and reuse will be computed automatically. File-level and commit-level metadata will be retained for all prompt artifacts.
+
+**Project Metadata (GitHub API and GHTorrent)**
+For each selected repository, we will collect:
+
+* Contributor count and commit history (via the GitHub API)
+* Issue and pull request activity (via the GitHub API or GHTorrent)
+* Timestamps for prompt-related commits
+* Stars and forks (as high-level engagement proxies)
+
+Where available, GHTorrent will be used to validate or supplement GitHub API results at larger scale.
+
+**Optional: Software Heritage Graph**
+If time and tooling permit, the Software Heritage Graph will be used to trace prompt files across forks and versions, allowing us to observe reuse and evolution beyond a single repository.
+
+
+
+---
+
+## Disclaimer: Use of AI
+I am a full-blown AI enthusiast and believe it is as or more important for humanity than the printing press. I use it for absolutely everything, thus in order to conform to the the [suggested guidelines](https://llm-guidelines.org/guidelines/), I will link directly to the conversation(s) pertaining to the assignment.
+
+### Formal Disclaimer
+Portions of this proposal (initial topic brainstorming, paper identification, text drafts, this paragraph) were generated with the assistance of OpenAI's ChatGPT-4o. All content was critically reviewed, edited, and verified by the author. The model was used to enhance productivity and clarity but not to replace original analysis or decision-making.
+
+[Link to Conversation](https://chatgpt.com/share/687ada87-7bf4-8001-8883-a3a9ed54e9f9)
+
+---
+
+
+## References
+
+Tafreshipour, A., Salami, M., & Pradel, M. (2024). *Prompting in the Wild: An Empirical Study of Prompt Evolution in Software Repositories*. *arXiv preprint* [arXiv:2412.17298](https://arxiv.org/abs/2412.17298)
+
+Zhou, W., Liu, J., & Sun, M. (2024). *A Systematic Survey of Prompt Engineering in Large Language Models*. *arXiv preprint* [arXiv:2402.07927](https://arxiv.org/abs/2402.07927)
+
+Li, X., Zhang, S., & Chen, M. (2023). *ROSCOE: A Benchmark for Reasoning Over Chain-of-Thought Explanations*. *arXiv preprint* [arXiv:2212.07919](https://arxiv.org/abs/2212.07919)
+
+Diao, W., Liu, Y., & Su, Y. (2024). *Economical Prompting Index: Balancing Accuracy and Cost in LLM Prompts*. *arXiv preprint* [arXiv:2412.01690](https://arxiv.org/abs/2412.01690)
+
