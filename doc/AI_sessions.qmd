@@ -4,4 +4,6 @@ This file stores links to AI sessions that guided the development of the project
 
 ## Deliverables
 
-### [Proposal]()
+### [Proposal](../paper/proposal/proposal_deliverable/proposal.qmd), [Data Sourcing](../src/data_sourcing.ipynb)
+
+[Link]()
